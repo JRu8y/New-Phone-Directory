@@ -1,3 +1,5 @@
+package io.dimitrivaughn;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -10,14 +12,14 @@ public class DirectorySpec {
 
 // Declaring fields to be used in testing environment
 
-    Character Finn;
+    Being Finn;
     Directory directory;
 
 // Initializing fields to be used in testing environment
 
     @Before
     public void Sandbox() {
-        Finn = new Character("Finn Mertens", "123-456-7890");
+        Finn = new Being("Finn Mertens", "123-456-7890");
         directory = new Directory();
     }
 

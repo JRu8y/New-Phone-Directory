@@ -1,3 +1,6 @@
+package io.dimitrivaughn;
+
+import java.lang.*;
 import java.util.HashMap;
 
 /**
@@ -9,7 +12,7 @@ public class Directory {
     // Initializing HashMap in the constructor
 
     public Directory(){
-        HashMap<String,Character> workingDirectory = new HashMap<String, Character>();
+        HashMap<String,Being> workingDirectory = new HashMap<String, Being>();
     }
 
     public void addCharacter(){}

@@ -1,10 +1,12 @@
+package io.dimitrivaughn;
+
 import java.util.ArrayList;
 
 /**
  * Created by dimitrivaughn on 5/17/16.
  */
 
-public class Character {
+public class Being {
 
 // Initializing fields
 
@@ -13,7 +15,11 @@ public class Character {
 
 // Using constructor to instantiate a new character
 
-    public Character(String name, String number){
+    public Being(String name, String number){
+
+         phoneNumber = new ArrayList<String>();
+
+
         this.name = name;
         phoneNumber.add(number);
     }
