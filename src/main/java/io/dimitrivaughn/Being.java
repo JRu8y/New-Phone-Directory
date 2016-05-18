@@ -24,23 +24,32 @@ public class Being {
         phoneNumber.add(number);
     }
 
-// Getters and setters for phone number
+// Getter for phone number
 
     public ArrayList<String> getPhoneNumber() {
         return this.phoneNumber;
     }
 
-    public void setPhoneNumber(ArrayList<String> phoneNumber) {
-        this.phoneNumber = phoneNumber;
+
+// Adds a phone number to Being
+
+    public void addPhoneNumber(String number) {
+        // this.phoneNumber.add(number);
     }
 
 // Getters and setters for name
 
-    public String getCharacterName(){
+    public String getBeingName(){
         return this.name;
     }
 
-    public void setCharacterName(String name){
+    public void setBeingName(String name){
         this.name = name;
     }
+
+
+
+
+
+
 }
