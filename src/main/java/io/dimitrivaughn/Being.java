@@ -34,7 +34,13 @@ public class Being {
 // Adds a phone number to Being
 
     public void addPhoneNumber(String number) {
-        // this.phoneNumber.add(number);
+        this.phoneNumber.add(number);
+    }
+
+// Remove a phone number from Being
+
+    public void removePhoneNumber(int number) {
+        this.phoneNumber.remove(number);
     }
 
 // Getters and setters for name

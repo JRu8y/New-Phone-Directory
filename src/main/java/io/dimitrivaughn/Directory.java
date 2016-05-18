@@ -64,7 +64,7 @@ public class Directory {
         return key;
     }
 
-// print all entries
+// print all entries in working directory
 
     public String printFullDirectory(){
         String result="";

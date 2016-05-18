@@ -15,7 +15,10 @@ public class BeingSpec {
     Directory directory;
     String expectedName;
     String actualName;
-    String returnName;
+    String expectedValue;
+    String actualValue;
+    int actualSize;
+    int expectedSize;
 
 
     @Before
@@ -23,7 +26,28 @@ public class BeingSpec {
     public void Sandbox() {
         Finn = new Being("Finn Mertens", "1234567890");
         directory = new Directory();
+    }
 
+    @Test
+    public void addPhoneNumberTest(){
+
+        directory.addBeing(Finn);
+        Finn.addPhoneNumber("3334546546");
+        actualSize = 2;
+        expectedSize = Finn.getPhoneNumber().size();
+        assertEquals("The size of the array should be the same: Expected value = 2", expectedName, actualName);
+
+    }
+
+    @Test
+    public void removePhoneNumberTest(){
+
+        directory.addBeing(Finn);
+        Finn.addPhoneNumber("3334546546");
+        Finn.removePhoneNumber(1);
+        actualSize = 1;
+        expectedSize = Finn.getPhoneNumber().size();
+        assertEquals("The size of the array should be the same: Expected value = 1", expectedName, actualName);
 
     }
 
