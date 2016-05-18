@@ -60,11 +60,11 @@ public class DirectorySpec {
     }
 
     @Test
-    public void lookupPhoneNumberTest(){
+    public void outputPhoneNumberTest(){
 
         directory.addBeing(Finn);
         expectedValue = "1234567890 ";
-        actualValue = directory.lookupPhoneNumber("Finn Mertens");
+        actualValue = directory.outputPhoneNumber("Finn Mertens");
         assertEquals("The actual phone number should match Finn's number: Expected value = 1234567890 ", expectedValue, actualValue);
     }
 
@@ -74,7 +74,7 @@ public class DirectorySpec {
         directory.addBeing(Lemongrab);
         expectedValue = "Earl of Lemongrab 2224536654 Finn Mertens 1234567890 ";
         actualValue = directory.printFullDirectory();
-        assertEquals("The actual String should show entire hashmap: Expected value = ", expectedValue, actualValue);
+        assertEquals("The actual String should print entire hashmap: Expected value = ", expectedValue, actualValue);
     }
 
     @Test
@@ -83,7 +83,16 @@ public class DirectorySpec {
         directory.addBeing(Lemongrab);
         expectedValue = "Earl of Lemongrab Finn Mertens ";
         actualValue = directory.printDirectoryNames();
-        assertEquals("The actual String should show entire hashmap: Expected value = ", expectedValue, actualValue);
+        assertEquals("The actual String should print entire hashmap (keys, values): Expected value = ", expectedValue, actualValue);
+    }
+
+    @Test
+    public void reverseLookupTest(){
+        directory.addBeing(Finn);
+        expectedValue = "Finn Mertens";
+        actualValue = directory.reverseLookup("1234567890");
+        assertEquals("The actual String should print all hashmap names(keys): Expected value = ", expectedValue, actualValue);
+
     }
 
 

@@ -3,6 +3,7 @@ package io.dimitrivaughn;
 import java.lang.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by dimitrivaughn on 5/17/16.
@@ -44,11 +45,21 @@ public class Directory {
         return workingDirectory.get(name);
     }
 
-// Look up being phone number
+// Output being phone number using name
 
-    public String lookupPhoneNumber(String name) {
-        if(workingDirectory.containsKey(name)) {
+    public String outputPhoneNumber(String name) {
+        if (workingDirectory.containsKey(name)) {
             return printPhoneNumber(workingDirectory.get(name).getPhoneNumber());
+        }
+        System.out.println("This being does not exist!");
+        return null;
+    }
+
+// Return being phone number arraylist by name
+
+    public ArrayList<String> lookupPhoneNumber(String name) {
+        if (workingDirectory.containsKey(name)) {
+            return workingDirectory.get(name).getPhoneNumber();
         }
         System.out.println("This being does not exist!");
         return null;
@@ -57,7 +68,7 @@ public class Directory {
 // print phone numbers
 
     public String printPhoneNumber(ArrayList<String> array) {
-        String key ="";
+        String key = "";
         for (String phoneNum : array) {
             key += phoneNum + " ";
         }
@@ -66,14 +77,15 @@ public class Directory {
 
 // print all entries in working directory
 
-    public String printFullDirectory(){
-        String result="";
+    public String printFullDirectory() {
+        String result = "";
 
-        for (String name : workingDirectory.keySet()){
+        for (String name : workingDirectory.keySet()) {
             String keys = name.toString();
             ArrayList phoneNum = workingDirectory.get(name).getPhoneNumber();
             String values = printPhoneNumber(phoneNum);
-            result += keys+" "+ values;}
+            result += keys + " " + values;
+        }
 
         return result;
 
@@ -81,18 +93,31 @@ public class Directory {
 
 // print directory names
 
-    public String printDirectoryNames(){
-    String result="";
+    public String printDirectoryNames() {
+        String result = "";
 
-    for (String name : workingDirectory.keySet()){
-        String keys = name.toString();
-        result += keys+" ";}
+        for (String name : workingDirectory.keySet()) {
+            String keys = name.toString();
+            result += keys + " ";
+        }
 
-    return result;
+        return result;
 
-}
+    }
 
+ // look up being name by phone number
 
+    public String reverseLookup(String phoneNumber){
+        String result = "";
+        for(Map.Entry<String, Being> entry : workingDirectory.entrySet()){
+            for (String phoneNum: lookupPhoneNumber(entry.getKey())){
+                if (phoneNum.equals(phoneNumber)){
+                    result= entry.getKey();
+                }
+            }
+        }
+        return result;
+    }
 
 }
 
