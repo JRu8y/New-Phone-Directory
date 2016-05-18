@@ -4,6 +4,7 @@ import java.lang.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * Created by dimitrivaughn on 5/17/16.
@@ -13,12 +14,12 @@ public class Directory {
 
 // Declaring fields
 
-    HashMap<String, Being> workingDirectory;
+    TreeMap<String, Being> workingDirectory;
 
 // Initializing HashMap in the constructor
 
     public Directory() {
-        workingDirectory = new HashMap<String, Being>();
+        workingDirectory = new TreeMap<String, Being>();
     }
 
 // Adds a being to the working directory
